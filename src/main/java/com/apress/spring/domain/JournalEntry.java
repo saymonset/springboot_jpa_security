@@ -30,7 +30,7 @@ public class JournalEntry {
             ParseException{
         this.title = title;
         this.summary = summary;
-        this.created = format.parse(date);
+        this.created = new Date();//format.parse(date);
     }
     JournalEntry(){}
     public Long getId() {
