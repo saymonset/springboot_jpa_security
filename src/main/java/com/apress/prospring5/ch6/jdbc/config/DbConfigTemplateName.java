@@ -1,16 +1,17 @@
-package com.apress.prospring5.ch6.config;
+package com.apress.prospring5.ch6.jdbc.config;
 
 /**
- * Created by simon on 20/09/18.
+ * Created by simon on 21/09/18.
  */
 
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
-
+import com.apress.prospring5.ch6.jdbc.imp.NamedParameterJdbcTemplateSingerDao;
+import com.apress.prospring5.ch6.jdbc.imp.TemplateSingerDao;
 import
         org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import  org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import  org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
@@ -18,7 +19,7 @@ import javax.sql.DataSource;
 import java.sql.Driver;
 @Configuration
 @PropertySource("classpath:db/jdbc.properties")
-public class DbConfig {
+public class DbConfigTemplateName {
     @Value("${jdbc.driverClassName}")
     private String driverClassName;
     @Value("${jdbc.url}")
@@ -53,8 +54,8 @@ public class DbConfig {
     }
 
     @Bean
-   // @Profile("test")
-    public DataSource dataSource0() {
+    // @Profile("test")
+    public DataSource dataSource1() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driverClassName);
         dataSource.setUrl(url);
@@ -64,18 +65,17 @@ public class DbConfig {
         return dataSource;
     }
 
-    @Bean public JdbcTemplate jdbcTemplate0(){
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(dataSource0());
-        return jdbcTemplate;
+    @Bean public NamedParameterJdbcTemplate namedParameterJdbcTemplate(){
+        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource1());
+
+        return namedParameterJdbcTemplate;
     }
 
     @Bean
     public SingerDao singerDao(){
-        /*TemplateSingerDao dao  =  new TemplateSingerDao();
+        NamedParameterJdbcTemplateSingerDao dao  =  new NamedParameterJdbcTemplateSingerDao();
 
-        dao.setJdbcTemplate(jdbcTemplate0());
-        return  dao;*/
-        return null;
+        dao.setNamedParameterJdbcTemplate(namedParameterJdbcTemplate());
+        return  dao;
     }
 }

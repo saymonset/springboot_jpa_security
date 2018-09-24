@@ -1,7 +1,7 @@
 package com.apress.spring;
 
-import com.apress.prospring5.ch6.config.DbConfig;
-import com.apress.prospring5.ch6.config.TemplateJdbcConfig;
+import com.apress.prospring5.ch6.jdbc.config.DbConfig;
+import com.apress.prospring5.ch6.jdbc.config.TemplateJdbcConfig;
 import com.apress.prospring5.ch6.entities.Singer;
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
 import org.junit.Ignore;

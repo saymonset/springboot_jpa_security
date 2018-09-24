@@ -1,6 +1,6 @@
 package com.apress.prospring5.ch6.jdbc;
 
-import com.apress.prospring5.ch6.config.DbConfig;
+import com.apress.prospring5.ch6.jdbc.config.DbConfig;
 import com.apress.prospring5.ch6.entities.Singer;
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
 import org.slf4j.Logger;

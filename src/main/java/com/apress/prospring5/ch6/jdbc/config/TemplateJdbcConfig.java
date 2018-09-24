@@ -1,4 +1,4 @@
-package com.apress.prospring5.ch6.config;
+package com.apress.prospring5.ch6.jdbc.config;
 
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
 import com.apress.prospring5.ch6.jdbc.imp.TemplateSingerDao;

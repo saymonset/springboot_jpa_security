@@ -1,4 +1,4 @@
-package com.apress.prospring5.ch6.config;
+package com.apress.prospring5.ch6.jdbc.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

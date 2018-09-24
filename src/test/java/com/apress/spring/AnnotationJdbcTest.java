@@ -3,12 +3,10 @@ package com.apress.spring;
 /**
  * Created by simon on 21/09/18.
  */
-import com.apress.prospring5.ch6.config.AppConfig;
-import com.apress.prospring5.ch6.config.DbConfigTemplateName;
+import com.apress.prospring5.ch6.jdbc.config.AppConfig;
 import com.apress.prospring5.ch6.entities.Album;
 import com.apress.prospring5.ch6.entities.Singer;
 import com.apress.prospring5.ch6.jdbc.dao.AnnotationSingerDao;
-import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,9 +18,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.util.GregorianCalendar;
 import java.util.List;
 

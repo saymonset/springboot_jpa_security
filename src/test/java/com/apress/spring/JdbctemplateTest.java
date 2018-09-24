@@ -1,6 +1,6 @@
 package com.apress.spring;
 
-import com.apress.prospring5.ch6.config.DbConfigTemplateName;
+import com.apress.prospring5.ch6.jdbc.config.DbConfigTemplateName;
 import com.apress.prospring5.ch6.entities.Album;
 import com.apress.prospring5.ch6.entities.Singer;
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
