@@ -5,6 +5,7 @@ package com.apress.prospring5.ch6.entities;
  */
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 public class Singer implements Serializable {
 
@@ -52,5 +53,18 @@ public class Singer implements Serializable {
 
     public void setAlbums(List<Album> albums) {
         this.albums = albums;
+    }
+    public boolean addAbum(Album album) {
+        if (albums == null) {
+            albums = new ArrayList<>();
+            albums.add(album);
+            return true;
+        } else {
+            if (albums.contains(album)) {
+                return false;
+            }
+        }
+        albums.add(album);
+        return true;
     }
 }

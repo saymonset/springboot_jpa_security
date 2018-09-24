@@ -1,7 +1,7 @@
 package com.apress.prospring5.ch6.config;
 
 import com.apress.prospring5.ch6.jdbc.dao.SingerDao;
-import com.apress.prospring5.ch6.jdbc.dao.imp.TemplateSingerDao;
+import com.apress.prospring5.ch6.jdbc.imp.TemplateSingerDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

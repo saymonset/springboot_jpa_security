@@ -35,6 +35,9 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.4.0.RELEASE'
 // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+	compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.0'
+
 
 	//compile group: 'org.aspectj', name: 'aspectjrt', version: '1.8.13'
 // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp

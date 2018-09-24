@@ -20,6 +20,8 @@ FLUSH PRIVILEGES;
 SET GLOBAL time_zone = '+3:00';
 The following code snippet depicts the SQL code necessary to create the two tables mentioned
 previously. This code is in the resources directory of the plain-jdbc project in schema.sql.
+
+/**
 CREATE TABLE SINGER (
        ID INT NOT NULL AUTO_INCREMENT
      , FIRST_NAME VARCHAR(60) NOT NULL
@@ -27,7 +29,19 @@ CREATE TABLE SINGER (
      , BIRTH_DATE DATE
      , UNIQUE UQ_SINGER_1 (FIRST_NAME, LAST_NAME)
      , PRIMARY KEY (ID)
+); ***/
+
+ CREATE TABLE SINGER (
+  ID INT NOT NULL AUTO_INCREMENT
+  , FIRST_NAME VARCHAR(60) NOT NULL
+  , LAST_NAME VARCHAR(40) NOT NULL
+  , BIRTH_DATE DATE
+  , VERSION INT NOT NULL DEFAULT 0
+  , UNIQUE UQ_SINGER_1 (FIRST_NAME, LAST_NAME)
+  , PRIMARY KEY (ID)
 );
+
+
 CREATE TABLE ALBUM (
        ID INT NOT NULL AUTO_INCREMENT
      , SINGER_ID INT NOT NULL
