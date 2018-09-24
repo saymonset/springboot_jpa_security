@@ -17,7 +17,7 @@ public class Instrument implements Serializable {
     private Set<Singer> singers = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(name = "singer_instrument",
+    @JoinTable(name = "SINGER_INSTRUMENT",
             joinColumns = @JoinColumn(name = "INSTRUMENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "SINGER_ID"))
     public Set<Singer> getSingers() {

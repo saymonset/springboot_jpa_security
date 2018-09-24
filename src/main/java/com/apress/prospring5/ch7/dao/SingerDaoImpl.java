@@ -32,22 +32,29 @@ public class SingerDaoImpl implements SingerDao {
     @Transactional(readOnly = true)
     public List<com.apress.prospring5.ch7.entities.Singer> findAll() {
         return sessionFactory.getCurrentSession()
-                .createQuery("from Singer s").list();
+                .createQuery("from  Singer s").list();
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public List<com.apress.prospring5.ch7.entities.Singer> findAllWithAlbum() {
-        return null;
+
+        return sessionFactory.getCurrentSession().
+                getNamedQuery("Singer.findAllWithAlbum").list();
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public com.apress.prospring5.ch7.entities.Singer findById(Long id) {
-        return null;
+
+        return (com.apress.prospring5.ch7.entities.Singer) sessionFactory.getCurrentSession().
+                getNamedQuery("Singer.findById").
+                setParameter("id", id).uniqueResult();
     }
 
     @Override
     public com.apress.prospring5.ch7.entities.Singer save(com.apress.prospring5.ch7.entities.Singer contact) {
-        return null;
+        sessionFactory.getCurrentSession().saveOrUpdate(contact);
+        logger.info("Singer saved with id: " + contact.getId());
+        return contact;
     }
 
     @Override
