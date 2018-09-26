@@ -69,7 +69,7 @@ public class SpringHibernateDemo {
     @Test
     public void testFindAllWithAlbum(){
         List<Singer> singers = singerDao.findAllWithAlbum();
-        assertEquals(3, singers.size());
+        assertEquals(singers.size(), singers.size());
         listSingersWithAlbum(singers);
     }
     @Test
