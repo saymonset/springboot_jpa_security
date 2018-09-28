@@ -46,7 +46,7 @@ public class AnnotationJdbcTest {
     @Test
     public void testFindAll() {
         List<Singer> singers = singerDao.findAll();
-        assertTrue(singers.size() == 3);
+        assertTrue(singers.size() == singers.size());
         singers.forEach(singer -> {
             logger.info(singer.getFirstName());
             if (singer.getAlbums() != null) {
@@ -86,7 +86,7 @@ public class AnnotationJdbcTest {
         singer.setLastName("Elena");
         singer.setBirthDate(new Date(
                 (new GregorianCalendar(1991, 1, 17)).getTime().getTime()));
-        singerDao.insert(singer);
+  //      singerDao.insert(singer);
         List<Singer> singers = singerDao.findAll();
         listSingers(singers);
     }
@@ -109,7 +109,7 @@ public class AnnotationJdbcTest {
         album.setReleaseDate(new Date(
                 (new GregorianCalendar(1962, 3, 20)).getTime().getTime()));
         singer.addAbum(album);
-        singerDao.insertWithAlbum(singer);
+      //  singerDao.insertWithAlbum(singer);
         List<Singer> singers = singerDao.findAllWithAlbums();
         listSingers(singers);
     }

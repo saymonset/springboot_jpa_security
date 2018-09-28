@@ -23,6 +23,13 @@ repositories {
 	mavenCentral()
 }
 
+sourceSets {
+	generated
+}
+sourceSets.generated.java.srcDirs =  ['src/main/generated']
+configurations {
+	querydslapt
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -33,12 +40,19 @@ dependencies {
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
 	compile group: 'org.springframework.data', name: 'spring-data-rest-hal-browser', version: '2.4.0.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.4.0.RELEASE'
-// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+	//compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
 	// https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
 	compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.0'
+//	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'
+	compile "com.mysema.querydsl:querydsl-jpa:3.6.3"
 
+	compile "com.mysema.querydsl:querydsl-apt:3.6.3:jpa"
+
+	//compile hibernate.querydslapt, hibernate.jpaModelGen
+	// Magic happens here
 	//compile group: 'org.aspectj', name: 'aspectjrt', version: '1.8.13'
 // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp
 	//compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'

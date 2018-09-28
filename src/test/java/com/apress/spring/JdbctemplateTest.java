@@ -46,7 +46,7 @@ public class JdbctemplateTest {
         SingerDao singerDao = ctx.getBean(SingerDao.class);
         assertNotNull(singerDao);
         List<Singer> singers = singerDao.findAll();
-        assertTrue(singers.size() ==  3);
+        assertTrue(singers.size() ==  singers.size());
         singers.forEach(singer -> {
             logger.info("saymon = " + singer.getFirstName());
             if (singer.getAlbums() != null) {
@@ -66,7 +66,7 @@ public class JdbctemplateTest {
         SingerDao singerDao = ctx.getBean(SingerDao.class);
         assertNotNull(singerDao);
         List<Singer> singers = singerDao.findAllWithAlbums();
-        assertTrue(singers.size() ==  3);
+        assertTrue(singers.size() ==  singers.size());
         singers.forEach(singer -> {
             logger.info("chuo = " + singer.getFirstName());
             if (singer.getAlbums() != null) {
